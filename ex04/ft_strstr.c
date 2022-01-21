@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 20:23:56 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/01/20 08:34:48 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/01/20 09:00:57 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/01/20 09:16:30 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include <stdbool.h>
+
+char	*ft_strstr(char *str, char *to_find)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	char	*a;
+	char	*b;
+
+	if (*to_find == '\0')
+		return (*str);
+	a = str;
+	b = to_find;
+	while (true)
 	{
-		s1++;
-		s2++;
+		if (*b == '\0')
+			return ((char *)(a - (b - to_find)));
+		if (*a == *b)
+			b++;
+		else
+			b = to_find;
+		if (*a == '\0')
+			break ;
+		a++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (0);
 }

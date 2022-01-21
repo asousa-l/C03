@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asousa-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 20:23:56 by asousa-l          #+#    #+#             */
-/*   Updated: 2022/01/20 08:34:48 by asousa-l         ###   ########.fr       */
+/*   Created: 2022/01/20 08:44:54 by asousa-l          #+#    #+#             */
+/*   Updated: 2022/01/20 08:59:44 by asousa-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	char	*a;
+
+	a = dest;
+	while (*a != '\0')
+		a++;
+	while (*src != '\0')
 	{
-		s1++;
-		s2++;
+		*a = *(unsigned char *)src;
+		a++;
+		src++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	*a = '\0';
+	return (dest);
 }
