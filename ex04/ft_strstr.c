@@ -34,5 +34,5 @@ char	*ft_strstr(char *str, char *to_find)
 			break ;
 		a++;
 	}
-	return (0);
+	return (*b);
 }
