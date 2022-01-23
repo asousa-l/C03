@@ -15,7 +15,7 @@ unsigned int	str_len(char *dest)
 	unsigned int	c;
 
 	c = 0;
-	while (dest[count] != '\0')
+	while (dest[c] != '\0')
 		c++;
 	return (c);
 }
@@ -45,6 +45,6 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		}
 		src++;
 	}
-	*dst = '\0';
+	*a = '\0';
 	return (a_len + (src - s));
 }

@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
+
 char	*ft_strcat(char *dest, char *src)
 {
 	char	*a;

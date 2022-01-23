@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	char	*a;

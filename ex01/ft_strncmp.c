@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	a;
+	unsigned int	a;
 
 	a = 0;
 	while ((*s1 != '\0') && (*s1 == *s2) && (a < n))
@@ -25,3 +28,4 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (0);
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
+
