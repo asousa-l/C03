@@ -19,9 +19,9 @@ char	*ft_strstr(char *str, char *to_find)
 	int	b;
 
 	a = 0;
-	if (*to_find == '\0')
+	if (to_find[0] == '\0')
 		return (str);
-	while (*str != '\0')
+	while (str[a] != '\0')
 	{
 		b = 0;
 		while (str[a + b] == to_find[b] && str[a + b] != '\0')
@@ -32,5 +32,21 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		a++;
 	}
+	return (NULL);
+}
+/*
+#include <stdio.h>
+
+char *ft_strstr(char *str, char *to_find);
+
+int		main(void)
+{
+	char str[] = "012340123456789";
+	char to_find[] = "456";
+
+	printf("-----\nstr = %s\nto_find = %s\n", str, to_find);
+	printf("%s\n", ft_strstr(str, to_find));
+
 	return (0);
 }
+*/

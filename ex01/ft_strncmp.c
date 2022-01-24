@@ -16,15 +16,27 @@
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	a;
+	int				diff;
 
 	a = 0;
-	while ((*s1 != '\0') && (*s1 == *s2) && (a < n))
+	diff = 0;
+	while ((a < n) && !diff && (s1[a] != '\0') && (s2[a] != '\0'))
 	{
-		s1++;
-		s2++;
+		diff = (unsigned char)s1[a] - (unsigned char)s2[a];
 		a++;
 	}
-	if (n == 0)
-		return (0);
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	if (a < n && !diff && (s1[a] == '\0' || s2[a] == '\0'))
+		diff = (unsigned char)s1[a] - (unsigned char)s2[a];
+	return (diff);
 }
+
+/*int	main(void)
+{
+	char *str1;
+	char *str2;
+
+	str1 = "";
+	str2 = "dsa";
+	printf("c  : %d\n", strncmp(str1, str2, 3));
+	printf("ft : %d\n", ft_strncmp(str1, str2, 3));
+}*/
